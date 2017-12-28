@@ -2,7 +2,7 @@
 
 This is home security project that consists of Raspberry Pi(RPi) that has connected alarm, reflector, USB webcam and PIR motion
 sensor. Node.js server is running on RPi and controls those inputs and outputs.
-It also communicates with Firebase Real-time database to store captured pictures and control its state.
+It also communicates with Firebase Real-time database to control its state and Firebase Storage to store captured pictures.
 Second part of the system is an Android application to control the system and view security pictures captured by the camera.
 
 It works as follows:
