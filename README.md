@@ -34,7 +34,10 @@ Connection schematics
 
 ![connection schematics](https://github.com/PChudani-Quest/HomeSecurity/blob/master/images/schematics.png)
 
-You also need to connect webcam to RPi USB port.
+You also need to connect webcam to RPi USB port. See actual image of connected HW. Notice RPi relay board has jumpers that connect
+relays automatically to gpio so you don't have to.
+
+![connection schematics](https://github.com/PChudani-Quest/HomeSecurity/blob/master/images/hw.JPG)
 
 ## Setup
 ### Firebase setup
