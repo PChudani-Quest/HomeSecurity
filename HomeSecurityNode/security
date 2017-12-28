@@ -1,0 +1,11 @@
+#!/bin/bash
+### BEGIN INIT INFO
+# Provides:          security 
+# Required-Start:    $all
+# Required-Stop:     0 1 6
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Home security system...
+### END INIT INFO
+
+/home/pi/.nvm/versions/node/v9.2.1/bin/node /home/pi/homesecuritynode/main.js

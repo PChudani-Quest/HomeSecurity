@@ -1,0 +1,23 @@
+{
+  "name": "homesecuritynode",
+  "version": "1.0.0",
+  "description": "Home security worker",
+  "main": "main.js",
+  "dependencies": {
+    "firebase-admin": "^5.5.1",
+    "node-webcam": "^0.4.3",
+    "nodemailer": "^4.4.1",
+    "onoff": "^1.1.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:PChudani-Quest/HomeSecurity.git"
+  },
+  "author": "Pet Chudanic",
+  "license": "Apache2",
+  "homepage": "https://github.com/PChudani-Quest/HomeSecurity"
+}

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Zabezpečení</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Heslo</string>
+    <string name="action_sign_in">Přihlásit</string>
+    <string name="action_sign_in_short">Přihlásit</string>
+    <string name="error_invalid_email">Email je špatně</string>
+    <string name="error_invalid_password">Heslo je moc krátké</string>
+    <string name="error_incorrect_password">Heslo je špatně</string>
+    <string name="error_field_required">Toto pole je vyžadováno</string>
+    <string name="status_on">Zapnuto</string>
+    <string name="status_off">Vypnuto</string>
+    <string name="status">Stav</string>
+    <string name="on_off">Vypnout/Zapnout</string>
+    <string name="security_images">Bezpečnostní záznamy</string>
+    <string name="permission_rationale">"Přístup ke kontaktům je požadován pro automatické doplnění emailu."
+    </string>
+</resources>
