@@ -72,7 +72,7 @@ sudo apt-get install npm
 create config.js in /HomeSecurityNode folder. There is sample_config.js. Configure it so that it contains your SMTP and also firebase parameters.
 
 - service account key
-copy your service account key to /HomeSecurityNode folder as serviceAccountKey.json
+copy your service account key file retrieved from Firebase to /HomeSecurityNode folder as serviceAccountKey.json
 
 - install
 go to /HomeSecurityNode and run npm install
