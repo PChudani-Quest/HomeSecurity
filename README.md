@@ -2,7 +2,7 @@
 
 This is home security project that consists of Raspberry Pi(RPi) that has connected alarm, reflector, USB webcam and PIR motion
 sensor. Node.js server is running on RPi and controls those inputs and outputs.
-It also communicates with Firebase Real-time database to store captured pictures and control its state.
+It also communicates with Firebase Real-time database to control its state and Firebase Storage to store captured pictures.
 Second part of the system is an Android application to control the system and view security pictures captured by the camera.
 
 It works as follows:
@@ -34,7 +34,10 @@ Connection schematics
 
 ![connection schematics](https://github.com/PChudani-Quest/HomeSecurity/blob/master/images/schematics.png)
 
-You also need to connect webcam to RPi USB port.
+You also need to connect webcam to RPi USB port. See actual image of connected HW. Notice RPi relay board has jumpers that connect
+relays automatically to gpio so you don't have to.
+
+![connection schematics](https://github.com/PChudani-Quest/HomeSecurity/blob/master/images/hw.JPG)
 
 ## Setup
 ### Firebase setup
@@ -66,10 +69,10 @@ sudo apt-get install npm
 ```
 
 - config.js 
-in /HomeSecurityNode folder there is sample_config.js. Configure it so that it contains your SMTP and also firebase parameters.
+create config.js in /HomeSecurityNode folder. There is sample_config.js. Configure it so that it contains your SMTP and also firebase parameters.
 
 - service account key
-copy your service account key to /HomeSecurityNode folder as serviceAccountKey.json
+copy your service account key file retrieved from Firebase to /HomeSecurityNode folder as serviceAccountKey.json
 
 - install
 go to /HomeSecurityNode and run npm install
