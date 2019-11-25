@@ -31,8 +31,8 @@ const iPir = new pir.PIR({
 
         var cameraAction = function() {
             var d = new Date();
-            var name = d.getDate() + "_" + (d.getMonth() + 1) + "_" + d.getFullYear() + "_"
-                + d.getHours() + "_" + d.getMinutes() + "_" + shotNumber;
+            var name = d.getFullYear() + "_" + (d.getMonth() + 1) + "_" + d.getDate() + "_"
+                + d.getHours() + "_" + d.getMinutes() + "_" + d.getSeconds() + "_" + shotNumber;
             var afterUpload = function (signedUrl) {
                 fs.unlink(name + ".jpg", (err) => {
                     if (err) {
