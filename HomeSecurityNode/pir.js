@@ -4,6 +4,7 @@ function PIR(conf) {
   this.gpio = new Gpio(conf.gpio, 'in', 'both');
   this.callback = conf.callback;
   this.processing = false;
+  this.processingCallback = false;
 }
 
 PIR.prototype.startProcessing = function() {
@@ -19,11 +20,15 @@ PIR.prototype.startProcessing = function() {
       console.log(err);
     }
 
-    if (value == 1) {
+    if (value == 1 && !this.processingCallback) {
       console.log("PIR detected something, calling callback");
       this.callback();
     }
   }.bind(this));
+}
+
+PIR.prototype.setProcessingCallback = function(state) {
+  this.processingCallback = state;
 }
 
 PIR.prototype.stopProcessing = function() {

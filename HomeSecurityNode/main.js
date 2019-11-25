@@ -20,6 +20,7 @@ const iBuzzer = new buzzer.Buzzer({
 const iPir = new pir.PIR({
     gpio: 17,
     callback: function () {
+        iPir.setProcessingCallback(true);
         iMailer.sendMail({
             subject: 'Alarm',
             content: 'Alarm ve sklepe zachytil pohyb. Zkontroluj zaznam z kamery'
@@ -27,9 +28,7 @@ const iPir = new pir.PIR({
         iLight.on();
         iBuzzer.buzz(3000);
 
-        var shotNumber = 1;
-
-        var cameraAction = function() {
+        var cameraAction = function(shotNumber) {
             var d = new Date();
             var name = d.getFullYear() + "_" + (d.getMonth() + 1) + "_" + d.getDate() + "_"
                 + d.getHours() + "_" + d.getMinutes() + "_" + d.getSeconds() + "_" + shotNumber;
@@ -45,19 +44,23 @@ const iPir = new pir.PIR({
                     name: name,
                     downloadUrl: signedUrl
                 });
+                if (shotNumber > 5) {
+                    clearInterval(cameraTimer);
+                    iLight.off();
+                    iPir.setProcessingCallback(false);
+                }
             };
             iWebcam.takePicture(name, function (image) {
                 console.log("Taken picture, ", image);
                 iFirebase.storeFile(image, afterUpload);
             });
-            shotNumber++;
-            if (shotNumber > 5) {
-                clearInterval(cameraTimer);
-                iLight.off();
-            }
         };
-        cameraAction();
-        var cameraTimer = setInterval(cameraAction, 1000);
+
+        var shotNumber = 1;
+        cameraAction(shotNumber);
+        var cameraTimer = setInterval(function () {
+            cameraAction(++shotNumber);
+        }, 1000);
     }
 });
 

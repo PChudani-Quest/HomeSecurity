@@ -8,4 +8,4 @@
 # Short-Description: Home security system...
 ### END INIT INFO
 
-/home/pi/.nvm/versions/node/v9.2.1/bin/node /home/pi/homesecuritynode/main.js
+/home/pi/.nvm/versions/node/v9.2.1/bin/node /home/pi/HomeSecurity/HomeSecurityNode/main.js
